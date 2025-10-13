@@ -1,131 +1,200 @@
-# Event Management System
+🎟️ Event Management System & Booking Platform
+📋 Overview
 
-## 📌 Project Overview
+A comprehensive Java Swing-based Event Management System with role-based access control, real-time analytics, and multi-user functionality.
+This enterprise-grade application enables organizers, customers, and administrators to efficiently manage events, bookings, communication, and analytics — all from one unified platform.
 
-A comprehensive **Java-based Event Management System** that provides a multi-role platform for **Customers, Organizers, and Administrators** to manage events, bookings, and system operations efficiently. This project showcases enterprise-level Java application development with robust features, real-time analytics, and scalable architecture for commercial event management needs.
+🎯 Key Features
+🔐 Multi-Role Authentication
 
----
+Customers: Browse events, make bookings, manage profiles
 
-## 🔑 Key Features
+Organizers: Create/manage events, track performance, view analytics
 
-### 🔐 Authentication & Security
+Admins: Oversee system operations, manage users, view financial analytics
 
-* Multi-role login system (Customer, Organizer, Admin)
-* OTP verification for Organizer & Admin (via mobile/email)
-* Strong password validation using regex patterns
-* Secure session management
+Secure OTP verification for organizer and admin logins
 
-### 👥 User Roles & Capabilities
+📊 Advanced Analytics & Reporting
 
-**Customer**
+Real-time financial dashboards with revenue tracking
 
-* Browse/search events with filters (category, price, date)
-* Book events with real-time ticket availability
-* Manage bookings & cancellations with automatic ticket reallocation
-* Edit personal profile and view booking history
+Profit/Loss calculations with built-in formulas
 
-**Organizer**
+Break-even analysis for event profitability
 
-* Create, edit, and delete events
-* Manage events with detailed forms (venue, pricing, capacity)
-* Access real-time analytics dashboard (revenue, attendance)
-* Manage profile with company details
-* Control event status (Pending, Approved, Rejected)
+Performance metrics and occupancy rate analysis
 
-**Administrator**
+Comprehensive PDF reports for events, users, and organizers
 
-* Central dashboard with system statistics
-* Manage users (activate/deactivate, edit profiles)
-* Approve or reject events
-* Configure system settings
-* Access revenue & growth analytics
-* Export data and reports (CSV)
+💳 Event & Booking Management
 
----
+Event creation with detailed configurations (capacity, pricing, categories)
 
-## ⚙️ Technical Implementation
+Smart booking system with real-time seat availability
 
-### Frontend (Java Swing)
+Automated email confirmations with PDF invoices
 
-* JTabbedPane navigation
-* JTable with custom renderers/editors
-* Responsive layouts (GridBagLayout, BorderLayout, FlowLayout)
-* Custom button components and dialogs
+Booking cancellation with automatic seat reallocation
 
-### Backend (MySQL + JDBC)
+Payment tracking and transaction monitoring
 
-* CRUD operations with SQL queries
-* Transaction management for bookings
-* Data validation & error handling
-* Connection pooling for efficiency
+🗣️ Integrated Communication System
 
-### Database Schema
+Real-time chat between customers, organizers, and admins
 
-* **Members** (Customer profiles)
-* **Organizers** (Event organizers)
-* **Events** (Event details & status)
-* **Bookings** (Customer reservations)
-* **Payments** (Transactions)
-* **SystemSettings** (Configurations)
+Multi-room chat architecture for conversation separation
 
----
+Persistent messaging with read status tracking
 
-## 🖥️ User Interface Highlights
+🛠️ Technical Architecture
+🖥️ Frontend
 
-* Tabbed navigation for role-specific modules
-* Real-time data refresh (every 30 seconds)
-* Color-coded event and booking status
-* Search & filter capabilities
-* Custom confirmation dialogs
+Java Swing GUI with modern, responsive design
 
----
+Custom UI components and tabbed interface navigation
 
-## 📊 Key Functionalities
+Real-time data visualization in tables and charts
 
-* Event creation with date/time pickers
-* Ticket capacity & revenue management
-* Real-time booking with automated payment records
-* Cancellation with refund processing
-* Analytics (monthly revenue, user growth, attendance)
-* CSV export functionality
+🗄️ Backend & Database
 
----
+MySQL database with optimized relational schema
 
-## 🏗️ System Architecture
+JDBC with connection pooling and transaction management
 
-```
-Login → Role-based Dashboard
-├── Customer: Browse Events → Book → Manage Bookings
-├── Organizer: Create Events → Analytics → Profile
-└── Admin: User Mgmt → Event Mgmt → System Settings → Analytics
-```
+Stored procedures and SQL views for complex queries
 
----
+🔒 Security & Configuration
 
-## 💼 Business Value
+Role-based access control (RBAC)
 
-* Streamlines event planning & booking
-* Provides real-time insights for decision-making
-* Enables collaboration across multiple roles
-* Scalable for growing event management needs
-* Comprehensive reporting for performance tracking
+Encrypted password handling
 
----
+OTP verification (Twilio SMS & Email)
 
-## 📐 ER Diagram
+External configuration via ConfigEditor and ConfigManager
 
-*(Add your ER diagram image here if available)*
+📁 Core Modules
+Module	Description
+Authentication & Registration (App.java, Register.java)	Multi-role login, user registration, OTP verification
+Customer Dashboard (Customer.java)	Event browsing, booking management, profile editing, chat integration
+Organizer Dashboard (Organizer.java)	Event creation, analytics, revenue tracking, break-even calculations
+Admin Dashboard (Admin.java)	User management, event approvals, system reporting, financial analytics
+Configuration System (ConfigEditor.java, ConfigManager.java)	Database setup, integration management, system settings
+Reporting Engine (PDF_Generator.java, RevenuePDFGenerator.java)	Multi-format PDF generation, financial reports, custom exports
+🗃️ Database Schema
 
----
+Main Tables:
 
-## 🚀 Tech Highlights
+Users – Customer, Organizer, and Admin details
 
-* Object-oriented modular design
-* Custom Swing components (tables, buttons, dialogs)
-* Exception handling with user-friendly messages
-* Maintainable and scalable code structure
-* Database connection pooling for optimized performance
+Events – Event info, pricing, and capacity
 
+Bookings – Reservations and ticket counts
 
-<img width="773" height="517" alt="image" src="https://github.com/user-attachments/assets/65653ab9-e45c-4df7-9d4d-5ec64ab5b041" />
+Payments – Transaction records and statuses
 
+Chat – Message history and conversation rooms
+
+System – Configuration and sequence tracking
+
+🚀 Installation & Setup
+Prerequisites
+
+Java JDK 8+
+
+MySQL Server 5.7+
+
+Maven for dependency management
+
+Configuration Steps
+
+Run ConfigEditor to set up database credentials
+
+Configure Twilio for SMS OTP
+
+Set up Email credentials for notifications
+
+Initialize the database using the built-in schema setup
+
+Dependencies
+
+MySQL Connector/J
+
+iTextPDF (for PDF reporting)
+
+Twilio Java SDK
+
+JavaMail API
+
+💡 Technical Highlights
+🎨 Advanced UI/UX
+
+Modern, professional design with responsive layout
+
+Color-coded indicators for status and alerts
+
+Real-time data refresh and analytics visualization
+
+📈 Business Intelligence
+
+Automated profit/loss and occupancy rate calculations
+
+Trend and revenue analysis
+
+Performance benchmarking and event ranking
+
+🔄 Real-Time Features
+
+Instant chat and booking updates
+
+Dynamic analytics refresh
+
+Real-time system notifications
+
+📋 Comprehensive Reporting
+
+Executive and financial summaries
+
+Deep-dive analytics with PDF export
+
+Organizer and event ranking reports
+
+🎭 Use Cases
+For Organizers
+
+Create and manage multiple events
+
+Track sales, performance, and revenue
+
+Communicate directly with customers
+
+For Customers
+
+Discover and book events
+
+Manage bookings and receive updates
+
+Access customer support through chat
+
+For Administrators
+
+Manage all users and events
+
+Analyze financial and operational metrics
+
+Generate reports and oversee configurations
+
+🔮 Future Enhancements
+
+📱 Mobile application (Android/iOS)
+
+💰 Advanced payment gateway integration
+
+🌐 Social media and marketing integration
+
+🤖 AI-powered event recommendations
+
+🌏 Multi-language & cloud deployment support
+
+<img width="964" height="956" alt="Event Management System ER Diagram" src="https://github.com/user-attachments/assets/1ecfcd97-2c8a-4969-a8a6-6fcd2615b623" />
